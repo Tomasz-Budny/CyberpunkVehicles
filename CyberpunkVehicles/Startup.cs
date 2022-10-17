@@ -42,6 +42,8 @@ namespace CyberpunkVehicles
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CyberpunkVehicles v1"));
             }
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 
