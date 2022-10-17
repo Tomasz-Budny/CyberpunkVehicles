@@ -1,4 +1,21 @@
+html {
+    background-color: #0f1111;
+}
+
 #cyberpunk-logo{
     width: 426px;
     height: 105px;
+}
+
+.add-vehicle-cont {
+    text-align: center;
+}
+
+.add-vehicle {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    background-color: #0f1111;
+    color: #f8ef00;
+    font-size: 40px;
+    cursor: pointer;
 }
