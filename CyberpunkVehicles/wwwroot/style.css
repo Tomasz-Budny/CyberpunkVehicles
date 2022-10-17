@@ -97,3 +97,16 @@ label {
     text-align: right;
 }
 
+.add-vehicle:hover {
+    color: white;
+}
+
+.abort-btn:hover {
+    border: solid #fb988f;
+    background-color: #fb988f;
+}
+
+.submit-btn:hover {
+    border: solid white;
+    background-color: white;
+}
