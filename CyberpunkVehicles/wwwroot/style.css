@@ -23,3 +23,22 @@ html {
 .create-vehicle-btns {
     text-align: right;
 }
+
+.abort-btn,
+.submit-btn {
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 7px;
+    text-transform: uppercase;
+}
+
+.abort-btn {
+    border: solid #ff6859;
+    background-color: #ff6859;
+}
+
+.submit-btn {
+    border: solid #f8ef00;
+    background-color: #f8ef00;
+}
