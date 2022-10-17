@@ -23,6 +23,36 @@
             <i class="fa-solid fa-circle-plus add-vehicle"></i>
         </div>
         <div class="create-new-vehicle">
+
+            <div class="columns is-centered">
+                <div class="column is-four-fifths create-new-vehicle-content">
+                    <form class="create-vehicle-form" method="POST" enctype="multipart/form-data">
+                        <div class="media">
+                            <figure class="media-left ">
+                                <p class="image">
+                                    <label for="upload" id="upload-label">
+                                        <img src="#"/>
+                                    </label>
+                                    <input type="file" name="vehicleImage" id="upload" ACCEPT="image/png, image/jpg">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                    <label for="name">NAME</label><br>
+                                    <input type="text" name="name" id="name"><br>
+
+                                    <label for="group">GROUP</label><br>
+                                    <input type="text" name="group" id="group"><br>
+
+                                    <label for="desc">DESCRIPTION</label><br>
+                                    <textarea name="description" id="desc"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
             
             <div class="columns is-centered">
                 <div class="create-vehicle-btns column is-four-fifths ">

@@ -42,3 +42,29 @@ html {
     border: solid #f8ef00;
     background-color: #f8ef00;
 }
+
+.create-vehicle-form input,
+.create-vehicle-form textarea,
+.create-vehicle-form select {
+    background-color: black;
+    color: white;
+    resize: none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%
+}
+
+label {
+    color: #00f0ff;
+}
+
+.create-new-vehicle-content {
+    background-color: black;
+    border-radius: 25px;
+    border: 2px solid #f8ef00;
+    padding: 20px 20px 10px;
+    color: whitesmoke;
+}
