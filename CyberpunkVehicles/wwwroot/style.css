@@ -57,6 +57,16 @@ html {
     width: 100%
 }
 
+#upload-label img{
+    border-radius: 25px;
+    width: 480px;
+    height: 168px;
+}
+
+#upload {
+    display: none;
+}
+
 label {
     color: #00f0ff;
 }
