@@ -19,3 +19,7 @@ html {
     font-size: 40px;
     cursor: pointer;
 }
+
+.create-vehicle-btns {
+    text-align: right;
+}
