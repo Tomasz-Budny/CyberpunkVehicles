@@ -78,3 +78,22 @@ label {
     padding: 20px 20px 10px;
     color: whitesmoke;
 }
+
+
+.vehicle-details {
+    padding-top: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #f8ef00;
+}
+
+.info-left {
+    color: #00f0ff;
+    float: left;
+    text-transform: uppercase;
+}
+
+.info-right {
+    float: right;
+    text-align: right;
+}
+
