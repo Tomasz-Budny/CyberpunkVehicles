@@ -172,3 +172,7 @@ figure .image img {
 .vehicle-options {
     text-align: right;
 }
+
+.collapse-btn {
+    margin-bottom: 10px;
+}
