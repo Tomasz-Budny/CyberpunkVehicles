@@ -126,6 +126,13 @@ label {
     background-color: white;
 }
 
+.add-vehicle:hover,
+.collapse-btn:hover,
+.expand-btn:hover,
+.delete-btn:hover {
+    color: white;
+}
+
 .vehicle-content{
     margin-bottom: 30px;
     background-color: black;

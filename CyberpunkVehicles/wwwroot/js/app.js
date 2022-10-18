@@ -18,3 +18,34 @@ function resetForm() {
     form.reset();
     preview.src = "Images/defaultImage.jpg"
 }
+
+function assignAllBtns() {
+    const expandBtns = document.querySelectorAll('.expand-btn');
+    const collapseBtns = document.querySelectorAll('.collapse-btn')
+    const deleteBtns = document.querySelectorAll('.delete-btn');
+
+    expandBtns.forEach(el => el.addEventListener('click', expandBtnClick));
+    collapseBtns.forEach(el => el.addEventListener('click', collapseBtnClick));
+    deleteBtns.forEach(el => el.addEventListener('click', deleteBtnClick))
+}
+
+function deleteBtnClick(event) {
+    const options = event.target.parentNode;
+    const id = options.querySelector('input').value;
+}
+
+function collapseBtnClick(event) {
+    const vehicleDetails = event.target.parentNode.parentNode;
+    const vehicle = vehicleDetails.parentNode;
+    vehicle.querySelector('.expand-container').classList.remove('is-hidden');
+    vehicleDetails.classList.add('is-hidden');
+}
+
+function expandBtnClick(event) {
+    const expandCont = event.target.parentNode;
+    const vehicle = expandCont.parentNode;
+    vehicle.querySelector('.vehicle-details').classList.remove('is-hidden');
+    expandCont.classList.add('is-hidden');
+}
+
+assignAllBtns();
