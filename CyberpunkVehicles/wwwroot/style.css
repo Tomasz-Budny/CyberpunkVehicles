@@ -176,3 +176,34 @@ figure .image img {
 .collapse-btn {
     margin-bottom: 10px;
 }
+
+.vehicle-error {
+    padding: 2px;
+    margin-bottom: 10px;
+    background-color: #ff6859;
+    border-radius: 10px;
+    border: 2px solid #ff6859;
+}
+
+.error-icon {
+    color: #7f3f39;
+    margin-left: 10px;
+    font-size: 25px;
+    float: left;
+}
+
+.error-message {
+    margin-top: 3px;
+    color: #7f3f39;
+    font-size: 20px;
+    float: right;
+    margin-right: 10px;
+}
+
+.hide-error-btn {
+    cursor: pointer;
+}
+
+.hide-error-btn:hover {
+    color: #fb988f;
+}
