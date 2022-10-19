@@ -2,12 +2,13 @@
 using AutoMapper;
 using CyberpunkVehicles.Entities;
 using CyberpunkVehicles.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CyberpunkVehicles.Services
 {
     public interface IVehicleService
     {
-        
+        IEnumerable<VehicleDto> GetAll();
     }
     
     public class VehicleService: IVehicleService
@@ -20,6 +21,14 @@ namespace CyberpunkVehicles.Services
             _mapper = mapper;
         }
         
-        
+        public IEnumerable<VehicleDto> GetAll()
+        {
+            var vehiclesDto = _mapper.Map<IEnumerable<VehicleDto>>(
+                _dbContext
+                    .Vehicles
+                    .Include(v => v.Body)
+                    .Include(v => v.Drivetrain));
+            return vehiclesDto;
+        }
     }
 }
