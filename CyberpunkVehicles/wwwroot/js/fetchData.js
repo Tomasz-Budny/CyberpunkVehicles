@@ -17,4 +17,15 @@ const displayVehicles = ({data}) => {
     }
 };
 
+const createVehicle = async () => {
+    const formData = new FormData(form);
+    await axios.post(uri, formData)
+        .then(response => {
+            getAllVehicles();
+            resetForm();
+        })
+        .catch(err => console.log(err))
+}
+submit.addEventListener('click', createVehicle)
+
 getAllVehicles();

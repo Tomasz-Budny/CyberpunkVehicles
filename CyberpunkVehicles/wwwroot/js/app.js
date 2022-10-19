@@ -2,6 +2,7 @@ const addVehicleBtn = document.querySelector('.add-vehicle');
 const createVehicleForm = document.querySelector('.create-new-vehicle');
 const form = document.querySelector('.create-vehicle-form');
 const preview = document.querySelector('#upload-label').querySelector('img');
+const submit = document.querySelector('.submit-btn');
 
 document.querySelector('#upload').onchange = event => {
     const [file] = event.target.files;
