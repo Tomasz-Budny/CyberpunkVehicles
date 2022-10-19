@@ -14,6 +14,5 @@ namespace CyberpunkVehicles.Controllers
             _vehicleService = vehicleService;
         }
         
-        
     }
 }
