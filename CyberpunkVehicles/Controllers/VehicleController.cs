@@ -5,7 +5,7 @@ namespace CyberpunkVehicles.Controllers
 {
     [Route("api/vehicle")]
     [ApiController]
-    public class VehicleController
+    public class VehicleController: ControllerBase
     {
         private readonly IVehicleService _vehicleService;
 
@@ -13,7 +13,6 @@ namespace CyberpunkVehicles.Controllers
         {
             _vehicleService = vehicleService;
         }
-        
         
     }
 }

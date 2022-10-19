@@ -1,4 +1,6 @@
-﻿namespace CyberpunkVehicles.Services
+﻿using System.Collections.Generic;
+
+namespace CyberpunkVehicles.Services
 {
     public interface IVehicleService
     {
