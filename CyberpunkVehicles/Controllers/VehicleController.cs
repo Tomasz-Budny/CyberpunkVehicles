@@ -14,5 +14,12 @@ namespace CyberpunkVehicles.Controllers
             _vehicleService = vehicleService;
         }
         
+        [HttpGet]
+        public ActionResult Get()
+        {
+            var vehiclesDto = _vehicleService.GetAll();
+            return Ok(vehiclesDto);
+        }
+        
     }
 }
