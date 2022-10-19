@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CyberpunkVehicles.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CyberpunkVehicles.Controllers
 {
@@ -6,6 +7,13 @@ namespace CyberpunkVehicles.Controllers
     [ApiController]
     public class VehicleController
     {
+        private readonly IVehicleService _vehicleService;
+
+        public VehicleController(IVehicleService vehicleService)
+        {
+            _vehicleService = vehicleService;
+        }
+        
         
     }
 }
