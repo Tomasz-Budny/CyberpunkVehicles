@@ -2,7 +2,7 @@ function vehicleBoilerplate({body, description, drivetrain, group, horsePower,
                                 id, imageRelativePath, name, topSpeed, weight, year}) {
     return (
         `<div class="vehicle columns is-centered vehicle${id}">
-            <div class="vehicle-errors ">   
+            <div class="vehicle-errors">   
               
             </div>
              <div class="vehicle-content column is-four-fifths ">
@@ -62,3 +62,20 @@ function vehicleBoilerplate({body, description, drivetrain, group, horsePower,
             
         </div>`);
 }
+
+function errorBoilerplate(message) {
+    return (
+        `
+        <div class="columns is-centered">
+                    <div class="vehicle-error column is-four-fifths">
+                        <div class="error-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="error-message">
+                            ${message}
+                            <i class="fa-solid fa-xmark hide-error-btn"></i>
+                        </div>
+                    </div>
+                </div>         
+        `);
+};
