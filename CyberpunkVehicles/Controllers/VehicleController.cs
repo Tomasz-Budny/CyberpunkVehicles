@@ -21,5 +21,16 @@ namespace CyberpunkVehicles.Controllers
             return Ok(vehiclesDto);
         }
         
+        [HttpPost]
+        public ActionResult Post([FromForm]CreateVehicleDto dto)
+        {
+            var result = _vehicleService.Create(dto);
+            if (result)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
+        
     }
 }
