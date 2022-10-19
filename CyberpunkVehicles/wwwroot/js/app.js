@@ -3,6 +3,13 @@ const createVehicleForm = document.querySelector('.create-new-vehicle');
 const form = document.querySelector('.create-vehicle-form');
 const preview = document.querySelector('#upload-label').querySelector('img');
 
+document.querySelector('#upload').onchange = event => {
+    const [file] = event.target.files;
+    if(file){
+        preview.src = URL.createObjectURL(file);
+    }
+}
+
 addVehicleBtn.addEventListener('click', () => {
     addVehicleBtn.classList.add('is-hidden');
     createVehicleForm.classList.remove('is-hidden');
