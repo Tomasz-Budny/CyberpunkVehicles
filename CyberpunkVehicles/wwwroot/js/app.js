@@ -56,4 +56,15 @@ function expandBtnClick(event) {
     expandCont.classList.add('is-hidden');
 }
 
+function assignHideErrorsBtns() {
+    const hideErrorBtns = document.querySelectorAll('.hide-error-btn');
+    hideErrorBtns.forEach(el => el.addEventListener('click', hideErrorBtnClick));
+}
+
+function hideErrorBtnClick(event) {
+    const error = event.target.parentNode.parentNode.parentNode;
+    const errorsCont = error.parentNode;
+    errorsCont.removeChild(error);
+};
+
 assignAllBtns();

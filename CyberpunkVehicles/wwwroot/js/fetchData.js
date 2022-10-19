@@ -24,8 +24,24 @@ const createVehicle = async () => {
             getAllVehicles();
             resetForm();
         })
-        .catch(err => console.log(err))
+        .catch(({response}) => {
+            if(response && response.request.status === 400){
+                displayErrors(response.data.errors);
+            }
+        });
 }
 submit.addEventListener('click', createVehicle)
+
+function displayErrors(errors) {
+    const errorCont = document.querySelector('.create-vehicle-errors');
+    errorCont.innerHTML = '';
+    const fields = Object.keys(errors);
+    fields.forEach(field => {
+        errors[field].forEach(error => {
+            errorCont.innerHTML += errorBoilerplate(`${field}: ${error}`)
+        })
+    });
+    assignHideErrorsBtns();
+}
 
 getAllVehicles();

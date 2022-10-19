@@ -177,6 +177,10 @@ figure .image img {
     margin-bottom: 10px;
 }
 
+.create-vehicle-errors{
+    margin-bottom: 10px;
+}
+
 .vehicle-error {
     padding: 2px;
     margin-bottom: 10px;
