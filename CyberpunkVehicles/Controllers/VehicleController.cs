@@ -1,4 +1,5 @@
-﻿using CyberpunkVehicles.Services;
+﻿using CyberpunkVehicles.Models;
+using CyberpunkVehicles.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CyberpunkVehicles.Controllers
