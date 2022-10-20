@@ -30,6 +30,15 @@ const createVehicle = async () => {
             }
         });
 }
+
+async function deleteVehicleById(id) {
+    await axios.delete(`${uri}/${id}`)
+        .then(response => {
+            getAllVehicles();
+        })
+        .catch(err => console.log(err));
+}
+
 submit.addEventListener('click', createVehicle)
 
 function displayErrors(errors) {

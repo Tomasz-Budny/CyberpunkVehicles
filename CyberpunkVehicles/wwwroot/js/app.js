@@ -37,9 +37,10 @@ function assignAllBtns() {
     deleteBtns.forEach(el => el.addEventListener('click', deleteBtnClick))
 }
 
-function deleteBtnClick(event) {
+async function deleteBtnClick(event) {
     const options = event.target.parentNode;
     const id = options.querySelector('input').value;
+    await deleteVehicleById(id)
 }
 
 function collapseBtnClick(event) {
