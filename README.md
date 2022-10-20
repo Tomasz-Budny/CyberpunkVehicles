@@ -8,7 +8,7 @@ The application was written to show the knowledge of the ASP.NET framework, the 
 The application allows the user to add new vehicles to the database, change and delete them. Also validates data and displays validation errors if present.
 The design of the application was inspired by the game by CD Projekt Red "Cyberpunk 2077".
 
-![Alt text](Screens/Screen1.png?raw=true "Title")
+![Alt text](Screens/screen1.png?raw=true "Title")
 
 ### Dependencies
 
