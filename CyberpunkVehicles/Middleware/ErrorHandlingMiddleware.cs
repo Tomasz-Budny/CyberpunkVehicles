@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CyberpunkVehicles.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,11 @@ namespace CyberpunkVehicles.Middleware
             try
             {
                 await next.Invoke(context);
+            }
+            catch(NotFoundException notFoundException)
+            {
+                context.Response.StatusCode = 404;
+                await context.Response.WriteAsync(notFoundException.Message);
             }
             catch (Exception e)
             {

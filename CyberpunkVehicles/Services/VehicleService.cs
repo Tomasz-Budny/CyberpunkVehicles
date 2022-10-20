@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using AutoMapper;
 using CyberpunkVehicles.Entities;
+using CyberpunkVehicles.Exceptions;
 using CyberpunkVehicles.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -64,7 +65,7 @@ namespace CyberpunkVehicles.Services
                 .FirstOrDefault(v => v.Id == id);
 
             if (vehicle is null)
-                throw new Exception("Vehicle was not found");
+                throw new NotFoundException("Vehicle was not found");
             _dbContext.Remove(vehicle);
             _dbContext.SaveChanges();
 
