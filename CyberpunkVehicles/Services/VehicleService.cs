@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using AutoMapper;
 using CyberpunkVehicles.Entities;
 using CyberpunkVehicles.Models;
@@ -11,6 +13,7 @@ namespace CyberpunkVehicles.Services
     {
         IEnumerable<VehicleDto> GetAll();
         bool Create(CreateVehicleDto dto);
+        void DeleteVehicle(int id);
     }
     
     public class VehicleService: IVehicleService
@@ -52,6 +55,21 @@ namespace CyberpunkVehicles.Services
                 return true;
             }
             return false;
+        }
+        
+        public void DeleteVehicle(int id)
+        {
+            var vehicle = _dbContext
+                .Vehicles
+                .FirstOrDefault(v => v.Id == id);
+
+            if (vehicle is null)
+                throw new Exception("Vehicle was not found");
+            _dbContext.Remove(vehicle);
+            _dbContext.SaveChanges();
+
+            var currentDirectory = Directory.GetCurrentDirectory();
+            File.Delete($"{currentDirectory}/wwwroot/{vehicle.ImageRelativePath}");
         }
         
     }
