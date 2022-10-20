@@ -39,6 +39,13 @@ namespace CyberpunkVehicles.Controllers
             _vehicleService.DeleteVehicle(id);
             return NoContent();
         }
+
+        [HttpPut("{id}")]
+        public ActionResult Update([FromRoute] int id, [FromBody] UpdateVehicleDto dto)
+        {
+            _vehicleService.Update(id, dto);
+            return Ok();
+        }
         
     }
 }

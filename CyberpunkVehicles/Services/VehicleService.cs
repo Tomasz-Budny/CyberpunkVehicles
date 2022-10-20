@@ -15,6 +15,7 @@ namespace CyberpunkVehicles.Services
         IEnumerable<VehicleDto> GetAll();
         bool Create(CreateVehicleDto dto);
         void DeleteVehicle(int id);
+        void Update(int id, UpdateVehicleDto dto);
     }
     
     public class VehicleService: IVehicleService
