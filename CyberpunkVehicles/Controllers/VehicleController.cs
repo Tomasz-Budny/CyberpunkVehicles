@@ -32,5 +32,12 @@ namespace CyberpunkVehicles.Controllers
             return BadRequest();
         }
         
+        [HttpDelete("{id}")]
+        public ActionResult Delete([FromRoute] int id)
+        {
+            _vehicleService.DeleteVehicle(id);
+            return NoContent();
+        }
+        
     }
 }
