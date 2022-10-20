@@ -75,7 +75,7 @@ function displayErrors(errors) {
     const fields = Object.keys(errors);
     fields.forEach(field => {
         errors[field].forEach(error => {
-            errorCont.innerHTML += errorBoilerplate(`${field}: ${error}`)
+            errorCont.innerHTML += errorBoilerplate(`${error}`);
         })
     });
     assignHideErrorsBtns();

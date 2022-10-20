@@ -1,4 +1,5 @@
-﻿using CyberpunkVehicles.Entities;
+﻿using System.Linq;
+using CyberpunkVehicles.Entities;
 using FluentValidation;
 
 namespace CyberpunkVehicles.Models.Validators
@@ -7,6 +8,16 @@ namespace CyberpunkVehicles.Models.Validators
     {
         public CreateVehicleDtoValidator(VehicleDbContext dbContext)
         {
+            RuleFor(x => x.Name)
+                .Custom((value, context) =>
+                {
+                    var nameInUse = dbContext.Vehicles.Any(u => u.Name == value);
+                    if(nameInUse)
+                    {
+                        context.AddFailure("Name", $"Pojazd o nazwie: {value} jest już w bazie danych!");
+                    }
+                });
+            
             RuleFor(x => x.VehicleImage)
                 .NotEmpty();
             
@@ -37,8 +48,7 @@ namespace CyberpunkVehicles.Models.Validators
 
             RuleFor(x => x.HorsePower)
                 .NotEmpty()
-                .GreaterThanOrEqualTo(1)
-                .WithMessage("źle jest");
+                .GreaterThanOrEqualTo(1);
             
             RuleFor(x => x.TopSpeed)
                 .NotEmpty()
@@ -47,6 +57,8 @@ namespace CyberpunkVehicles.Models.Validators
             RuleFor(x => x.Year)
                 .NotEmpty()
                 .GreaterThanOrEqualTo(1);
+            
+            
 
         }
     }
