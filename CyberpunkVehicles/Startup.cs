@@ -4,7 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using CyberpunkVehicles.Entities;
 using CyberpunkVehicles.Middleware;
+using CyberpunkVehicles.Models;
+using CyberpunkVehicles.Models.Validators;
 using CyberpunkVehicles.Services;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +34,8 @@ namespace CyberpunkVehicles
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IValidator<CreateVehicleDto>, CreateVehicleDtoValidator>();
+            services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
             services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<VehiclesSeeder>();
             services.AddAutoMapper(this.GetType().Assembly);
@@ -56,7 +62,8 @@ namespace CyberpunkVehicles
             }
             app.UseDefaultFiles();
             app.UseStaticFiles();
-
+            
+            app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseRouting();
