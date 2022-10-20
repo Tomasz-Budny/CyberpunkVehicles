@@ -41,16 +41,5 @@ async function deleteVehicleById(id) {
 
 submit.addEventListener('click', createVehicle)
 
-function displayErrors(errors) {
-    const errorCont = document.querySelector('.create-vehicle-errors');
-    errorCont.innerHTML = '';
-    const fields = Object.keys(errors);
-    fields.forEach(field => {
-        errors[field].forEach(error => {
-            errorCont.innerHTML += errorBoilerplate(`${field}: ${error}`)
-        })
-    });
-    assignHideErrorsBtns();
-}
 
 getAllVehicles();

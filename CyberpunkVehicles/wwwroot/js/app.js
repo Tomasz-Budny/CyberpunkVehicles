@@ -24,7 +24,8 @@ createVehicleForm.querySelector('.abort-btn').addEventListener('click', () => {
 
 function resetForm() {
     form.reset();
-    preview.src = "Images/defaultImage.jpg"
+    preview.src = "Images/defaultImage.jpg";
+    hideErrors();
 }
 
 function assignAllBtns() {
@@ -66,6 +67,23 @@ function hideErrorBtnClick(event) {
     const error = event.target.parentNode.parentNode.parentNode;
     const errorsCont = error.parentNode;
     errorsCont.removeChild(error);
-};
+}
+
+function displayErrors(errors) {
+    const errorCont = document.querySelector('.create-vehicle-errors');
+    errorCont.innerHTML = '';
+    const fields = Object.keys(errors);
+    fields.forEach(field => {
+        errors[field].forEach(error => {
+            errorCont.innerHTML += errorBoilerplate(`${field}: ${error}`)
+        })
+    });
+    assignHideErrorsBtns();
+}
+
+function hideErrors() {
+    const errorCont = document.querySelector('.create-vehicle-errors');
+    errorCont.innerHTML = '';
+}
 
 assignAllBtns();
