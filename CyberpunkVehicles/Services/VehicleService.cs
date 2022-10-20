@@ -72,6 +72,28 @@ namespace CyberpunkVehicles.Services
             var currentDirectory = Directory.GetCurrentDirectory();
             File.Delete($"{currentDirectory}/wwwroot/{vehicle.ImageRelativePath}");
         }
+
+        public void Update(int id, UpdateVehicleDto dto)
+        {
+            var vehicleDto = _mapper.Map<Vehicle>(dto);
+
+            var vehicle = _dbContext
+                .Vehicles
+                .FirstOrDefault(v => v.Id == id);
+
+            if (vehicle is null)
+                throw new NotFoundException("Vehicle was not found");
+
+            _dbContext.Vehicles.Update(vehicle);
+            vehicle.DrivetrainId = vehicleDto.DrivetrainId;
+            vehicle.BodyId = vehicleDto.BodyId;
+            vehicle.Weight = vehicleDto.Weight;
+            vehicle.HorsePower = vehicleDto.HorsePower;
+            vehicle.TopSpeed = vehicleDto.TopSpeed;
+            vehicle.Year = vehicleDto.Year;
+            _dbContext.SaveChanges();
+
+        }
         
     }
     

@@ -24,6 +24,8 @@ namespace CyberpunkVehicles
                 .ForMember(m => m.TopSpeed,
                     c =>
                         c.MapFrom(s => $"{s.TopSpeed} MPH"));
+
+            CreateMap<UpdateVehicleDto, Vehicle>();
         }
     }
 }

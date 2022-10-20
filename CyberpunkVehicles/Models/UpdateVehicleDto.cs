@@ -6,7 +6,7 @@
         public int BodyId { get; set; }
         public int Weight { get; set; }
         public int HorsePower { get; set; }
-        public string TopSpeed { get; set; }
+        public int TopSpeed { get; set; }
         public int Year { get; set; }
     }
 }
