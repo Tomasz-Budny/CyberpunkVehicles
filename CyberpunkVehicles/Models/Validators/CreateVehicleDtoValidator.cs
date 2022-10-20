@@ -14,7 +14,7 @@ namespace CyberpunkVehicles.Models.Validators
                     var nameInUse = dbContext.Vehicles.Any(u => u.Name == value);
                     if(nameInUse)
                     {
-                        context.AddFailure("Name", $"Pojazd o nazwie: {value} jest już w bazie danych!");
+                        context.AddFailure("Name", $"Pojazd o nazwie: {value}, jest już w bazie danych!");
                     }
                 });
             
