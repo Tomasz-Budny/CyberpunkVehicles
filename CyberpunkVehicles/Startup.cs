@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CyberpunkVehicles.Entities;
+using CyberpunkVehicles.Middleware;
 using CyberpunkVehicles.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,6 +30,7 @@ namespace CyberpunkVehicles
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ErrorHandlingMiddleware>();
             services.AddScoped<VehiclesSeeder>();
             services.AddAutoMapper(this.GetType().Assembly);
             services.AddScoped<IVehicleService, VehicleService>();
